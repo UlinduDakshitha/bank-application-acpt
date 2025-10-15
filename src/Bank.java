@@ -1,7 +1,8 @@
 import java.util.Scanner;
 public class Bank {
+
     public static void main(String[] args) {
-Scanner sc=new Scanner(System.in);
+        Scanner sc=new Scanner(System.in);
 
 int[] accountNumber=new int[10];
 double[] accountBalance=new double[10];
@@ -27,10 +28,27 @@ while(choice!=0 && choice!=8){
     choice = sc.nextInt();
 
 }
-
+createAccount();
     }
     public static void createAccount(){
-        System.out.print("What type account you want");
+        System.out.println("Press 1 To create Savings Account");
+        System.out.println("Press 2 To create Current Account");
+        System.out.println("Press 3 To create Wanitha Wasana");
+         Scanner scan=new Scanner(System.in);
+         int no=scan.nextInt();
+      switch (no){
+          case 1:
+              System.out.println("Welcome to Savings Account:");
+              break;
+
+          case 2:
+              System.out.println("Welcome to Current Account:");
+              break;
+
+          case 3:
+              System.out.println("Welcome to Wanitha Wasana:");
+              break;
+      }
 
     }
 }
