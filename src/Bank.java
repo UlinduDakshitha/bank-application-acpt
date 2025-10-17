@@ -6,12 +6,12 @@ public class Bank {
 
         Scanner sc = new Scanner(System.in);
 
-        String[] accNumbers = new String[100];
-        String[] accNames = new String[100];
-        String[] accTypes = new String[100];
-        double[] accBalances = new double[100];
-        double[] loanAmounts = new double[100];
-        String[] loanDescriptions = new String[100];
+        String[] accNumbers = new String[10];
+        String[] accNames = new String[10];
+        String[] accTypes = new String[10];
+        double[] accBalances = new double[10];
+        double[] loanAmounts = new double[10];
+        String[] loanDescriptions = new String[10];
 
         int accountCount = 0;
         int choice = 0;
@@ -112,8 +112,8 @@ public class Bank {
     public static void depositMoney(Scanner sc, String[] accNumbers, double[] accBalances, int accountCount) {
         System.out.println("Deposit Money");
         System.out.print("Enter Account Number: ");
-        sc.nextLine();
-        String accNo = sc.nextLine();
+        sc.next();
+        String accNo = sc.next();
 
         int index = findAccount(accNumbers, accNo, accountCount);
 
@@ -134,7 +134,7 @@ public class Bank {
     }
 
     public static void withdrawMoney(Scanner sc, String[] accNumbers, double[] accBalances, int accountCount) {
-        System.out.println("==== Withdraw Money ====");
+        System.out.println("Withdraw Money");
         System.out.print("Enter Account Number: ");
         sc.next();
         String accNo = sc.next();
@@ -159,10 +159,10 @@ public class Bank {
 
     public static void checkBalance(Scanner sc, String[] accNumbers, String[] accNames, String[] accTypes,
                                     double[] accBalances, int accountCount) {
-        System.out.println("==== Check Balance ====");
+        System.out.println("Check Balance");
         System.out.print("Enter Account Number: ");
-        sc.nextLine();
-        String accNo = sc.nextLine();
+        sc.next();
+        String accNo = sc.next();
 
         int index = findAccount(accNumbers, accNo, accountCount);
 
@@ -176,9 +176,9 @@ public class Bank {
     }
 
     public static void applyLoan(Scanner sc, String[] accNumbers, double[] loanAmounts, String[] loanDescriptions, int accountCount) {
-        System.out.println("==== Apply for Loan ====");
+        System.out.println(" Apply for Loan");
         System.out.print("Enter Account Number: ");
-        sc.nextLine();
+        sc.next();
         String accNo = sc.nextLine();
 
         int index = findAccount(accNumbers, accNo, accountCount);
@@ -190,21 +190,20 @@ public class Bank {
 
         System.out.print("Enter Loan Amount: ");
         double loan = sc.nextDouble();
-        sc.nextLine();
-        System.out.print("Enter Loan Description: ");
-        String desc = sc.nextLine();
+        sc.next();
+
 
         loanAmounts[index] = loan;
-        loanDescriptions[index] = desc;
+
 
         System.out.println("Loan applied successfully!");
     }
 
     public static void viewLoanDetails(Scanner sc, String[] accNumbers, double[] loanAmounts, String[] loanDescriptions, int accountCount) {
-        System.out.println("==== View Loan Details ====");
+        System.out.println("View Loan Details");
         System.out.print("Enter Account Number: ");
-        sc.nextLine();
-        String accNo = sc.nextLine();
+        sc.next();
+        String accNo = sc.next();
 
         int index = findAccount(accNumbers, accNo, accountCount);
 
@@ -212,18 +211,18 @@ public class Bank {
             System.out.println("Account not found!");
         } else {
             System.out.println("Loan Amount: " + loanAmounts[index]);
-            System.out.println("Loan Description: " + loanDescriptions[index]);
+
         }
     }
 
     public static void transferFunds(Scanner sc, String[] accNumbers, double[] accBalances, int accountCount) {
-        System.out.println("==== Transfer Funds ====");
-        sc.nextLine();
+        System.out.println("Transfer Funds");
+        sc.next();
         System.out.print("Enter Sender Account Number: ");
-        String fromAcc = sc.nextLine();
+        String fromAcc = sc.next();
 
         System.out.print("Enter Receiver Account Number: ");
-        String toAcc = sc.nextLine();
+        String toAcc = sc.next();
 
         int fromIndex = findAccount(accNumbers, fromAcc, accountCount);
         int toIndex = findAccount(accNumbers, toAcc, accountCount);
