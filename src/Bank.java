@@ -11,7 +11,7 @@ public class Bank {
         double[] accBalances = new double[10];
         double[] loanAmounts = new double[10];
 
-        int accountCount = 0;
+        int Count = 0;
         int choice = 0;
 
         while (choice != 8) {
@@ -28,19 +28,19 @@ public class Bank {
             choice = sc.nextInt();
 
             if (choice == 1) {
-                accountCount = createAccount(sc, accNumbers, accNames, accTypes, accBalances, loanAmounts, accountCount);
+                Count = createAccount(sc, accNumbers, accNames, accTypes, accBalances, loanAmounts, Count);
             } else if (choice == 2) {
-                depositMoney(sc, accNumbers, accBalances, accountCount);
+                depositMoney(sc, accNumbers, accBalances, Count);
             } else if (choice == 3) {
-                withdrawMoney(sc, accNumbers, accBalances, accountCount);
+                withdrawMoney(sc, accNumbers, accBalances, Count);
             } else if (choice == 4) {
-                checkBalance(sc, accNumbers, accNames, accTypes, accBalances, accountCount);
+                checkBalance(sc, accNumbers, accNames, accTypes, accBalances, Count);
             } else if (choice == 5) {
-                applyLoan(sc, accNumbers, loanAmounts, accountCount);
+                applyLoan(sc, accNumbers, loanAmounts, Count);
             } else if (choice == 6) {
-                viewLoan(sc, accNumbers, loanAmounts, accountCount);
+                viewLoan(sc, accNumbers, loanAmounts, Count);
             } else if (choice == 7) {
-                transferMoney(sc, accNumbers, accBalances, accountCount);
+                transferMoney(sc, accNumbers, accBalances, Count);
             } else if (choice == 8) {
                 System.out.println("Thank you!...");
             } else {
