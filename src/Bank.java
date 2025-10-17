@@ -13,7 +13,7 @@ String[] loanDescriptions=new String[10];
 
         int choice = 0;
 
-while(choice!=0 && choice!=8){
+while(choice==0){
 
     System.out.println("Welcome To the Bank:");
     System.out.println("1. Create Account");
